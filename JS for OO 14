@@ -1,0 +1,219 @@
+Qualtrics.SurveyEngine.addOnload(function() 
+
+{ 
+
+     //Set new Active Module, hide buttons on empty page and automatically go to next page. 
+
+    //This is because the embedded data works after the ToC creation, so needs a loading question to update it. 
+
+    //REQUIRES a page break after this question. 
+
+     
+
+    //GATHER ALL VALUES INTO ONE PLACE 
+
+    answerArrayOO4 = ["${q://QID571/ChoiceNumericEntryValue/1}"]; 
+
+    answerArrayOO5LEInt =  ["${q://QID2/ChoiceNumericEntryValue/1/1}"]; 
+
+    answerArrayOO5LEExt =  ["${q://QID2/ChoiceNumericEntryValue/28/1}"]; 
+
+    answerArrayOO5FIInt =  ["${q://QID2/ChoiceNumericEntryValue/29/1}"]; 
+
+    answerArrayOO5FIExt =  ["${q://QID2/ChoiceNumericEntryValue/30/1}"];     
+
+    answerArrayOO5PEInt =  ["${q://QID2/ChoiceNumericEntryValue/31/1}"]; 
+
+    answerArrayOO5PEExt =  ["${q://QID2/ChoiceNumericEntryValue/32/1}"];     
+
+    answerArrayOO5REInt =  ["${q://QID2/ChoiceNumericEntryValue/33/1}"]; 
+
+    answerArrayOO5REExt =  ["${q://QID2/ChoiceNumericEntryValue/34/1}"]; 
+
+    answerArrayOO5INFInt =  ["${q://QID2/ChoiceNumericEntryValue/35/1}"]; 
+
+    answerArrayOO5INFExt =  ["${q://QID2/ChoiceNumericEntryValue/36/1}"];     
+
+    answerArrayOO5HFInt =  ["${q://QID2/ChoiceNumericEntryValue/37/1}"]; 
+
+    answerArrayOO5HFExt =  ["${q://QID2/ChoiceNumericEntryValue/38/1}"];     
+
+     
+
+    answerArrayOO4FISSAPas =  ["${q://QID4/ChoiceNumericEntryValue/1/1}"];     
+
+    answerArrayOO4FISSAAct =  ["${q://QID4/ChoiceNumericEntryValue/4/1}"]; 
+
+    answerArrayOO4FICPas =  ["${q://QID4/ChoiceNumericEntryValue/2/1}"]; 
+
+    answerArrayOO4FICAct =  ["${q://QID4/ChoiceNumericEntryValue/5/1}"];     
+
+    answerArrayOO4FISECPas =  ["${q://QID4/ChoiceNumericEntryValue/3/1}"]; 
+
+    answerArrayOO4FISECAct =  ["${q://QID4/ChoiceNumericEntryValue/16/1}"];     
+
+     
+
+    //CREATE VARIABLES 
+
+    var i = 1; 
+
+    var x = answerArrayOO4[i-1]; 
+
+    var yLEInt = answerArrayOO5LEInt[i-1]; 
+
+    var yLEext = answerArrayOO5LEExt[i-1]; 
+
+    var yFIint = answerArrayOO5FIInt[i-1]; 
+
+    var yFIext = answerArrayOO5FIExt[i-1]; 
+
+    var yPEint = answerArrayOO5PEInt[i-1]; 
+
+    var yPEext = answerArrayOO5PEExt[i-1]; 
+
+    var yREint = answerArrayOO5REInt[i-1]; 
+
+    var yREext = answerArrayOO5REExt[i-1]; 
+
+    var yINFint = answerArrayOO5INFInt[i-1]; 
+
+    var yINFext = answerArrayOO5INFExt[i-1]; 
+
+    var yHFint = answerArrayOO5HFInt[i-1]; 
+
+    var yHFext = answerArrayOO5HFExt[i-1]; 
+
+     
+
+    var yFISSAPas = answerArrayOO4FISSAPas[i-1]; 
+
+    var yFISSAAct = answerArrayOO4FISSAAct[i-1]; 
+
+    var yFICPas = answerArrayOO4FICPas[i-1]; 
+
+    var yFICAct = answerArrayOO4FICAct[i-1]; 
+
+    var yFISECPas = answerArrayOO4FISECPas[i-1];     
+
+    var yFISECAct = answerArrayOO4FISECAct[i-1];     
+
+  
+
+    //SUM TOGETHER 
+
+    var sumLEint = [(x/100)*yLEInt]; 
+
+    var sumLEext = [(x/100)*yLEext]; 
+
+    var sumFIint = [(x/100)*yFIint]; 
+
+    var sumFIext = [(x/100)*yFIext]; 
+
+    var sumPEint = [(x/100)*yPEint]; 
+
+    var sumPEext = [(x/100)*yPEext]; 
+
+    var sumREint = [(x/100)*yREint]; 
+
+    var sumREext = [(x/100)*yREext]; 
+
+    var sumINFint = [(x/100)*yINFint]; 
+
+    var sumINFext = [(x/100)*yINFext]; 
+
+    var sumHFint = [(x/100)*yHFint]; 
+
+    var sumHFext = [(x/100)*yHFext]; 
+
+     
+
+    var sumFISSA = [yFISSAPas + yFISSAAct]; 
+
+    var sumFIC = [yFICPas + yFICAct]; 
+
+    var sumFISEC = [yFISECPas + yFISECAct]; 
+
+  
+
+    //LE 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_LE_USD", sumLEint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_LE_USD", sumLEext); 
+
+    //FI 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_FI_USD", sumFIint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_FI_USD", sumFIext); 
+
+    //PE 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_PE_USD", sumPEint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_PE_USD", sumPEext); 
+
+    //RE 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_RE_USD", sumREint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_RE_USD", sumREext); 
+
+    //INF 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_INF_USD", sumINFint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_INF_USD", sumINFext); 
+
+    //HF 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_HF_USD", sumHFint); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Ext_HF_USD", sumHFext); 
+
+  
+
+    //FIs 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_FISSA_pc", sumFISSA); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_FIC_pc", sumFIC); 
+
+    Qualtrics.SurveyEngine.setEmbeddedData("Int_FISEC_pc", sumFISEC); 
+
+  
+
+     
+
+    jQuery("#PreviousButton, #NextButton").css("visibility","hidden"); 
+
+    this.clickNextButton() 
+
+  
+
+}); 
+
+  
+
+Qualtrics.SurveyEngine.addOnReady(function() 
+
+{ 
+
+    /*Place your JavaScript here to run when the page is fully displayed*/ 
+
+  
+
+}); 
+
+  
+
+Qualtrics.SurveyEngine.addOnUnload(function() 
+
+{ 
+
+    /*Place your JavaScript here to run when the page is unloaded*/ 
+
+  
+
+});
