@@ -1,141 +1,170 @@
-Qualtrics.SurveyEngine.addOnload(function() 
+Qualtrics.SurveyEngine.addOnload(function()
+{  
 
-{ 
+    //CREATE VARIABLES  
+	//assuming this question is always seen...
+    var x =  parseFloat("${q://QID571/ChoiceNumericEntryValue/1}")
+	
+	//assuming this question is NOT always seen...
+	var yLEInt = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/1/1}"))){
+		yLEInt = parseFloat("${q://QID2/ChoiceNumericEntryValue/1/1}")
+	}
+	
+    var yLEext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/28/1}"))){
+		yLEext = parseFloat("${q://QID2/ChoiceNumericEntryValue/28/1}")
+	}
+	
+   var yFIint = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/29/1}"))){
+		yFIint = parseFloat("${q://QID2/ChoiceNumericEntryValue/29/1}")
+	}
+	
+	var yFIext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/30/1}"))){
+		yFIext = parseFloat("${q://QID2/ChoiceNumericEntryValue/30/1}")
+	}
+	
+    var yPEint = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/31/1}"))){
+		yPEint = parseFloat("${q://QID2/ChoiceNumericEntryValue/31/1}")
+	}
+	
+    var yPEext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/32/1}"))){
+		yPEext = parseFloat("${q://QID2/ChoiceNumericEntryValue/32/1}")
+	}
+	
+	var yREint = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/33/1}"))){
+		yREint = parseFloat("${q://QID2/ChoiceNumericEntryValue/33/1}")
+	}
 
-     //Set new Active Module, hide buttons on empty page and automatically go to next page. 
+	var yREext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/34/1}"))){
+		yREext = parseFloat("${q://QID2/ChoiceNumericEntryValue/34/1}")
+	}
+	
+	var yINFint = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/35/1}"))){
+		yINFint = parseFloat("${q://QID2/ChoiceNumericEntryValue/35/1}")
+	}
+	
+    var  yINFext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/36/1}"))){
+		yINFext = parseFloat("${q://QID2/ChoiceNumericEntryValue/36/1}")
+	}
+	
+    var yHFint = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/37/1}"))){
+		yHFint = parseFloat("${q://QID2/ChoiceNumericEntryValue/37/1}")
+	}
+	
+    var yHFext = 0
+    if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/38/1}"))){
+		yHFext = parseFloat("${q://QID2/ChoiceNumericEntryValue/38/1}")
+	}
 
-    //This is because the embedded data works after the ToC creation, so needs a loading question to update it. 
-
-    //REQUIRES a page break after this question. 
-
-     
-
-    //GATHER ALL VALUES INTO ONE PLACE 
-
-    answerArrayOO4 = ["${q://QID571/ChoiceNumericEntryValue/1}"]; 
-
-    answerArrayOO5LEInt =  ["${q://QID2/ChoiceNumericEntryValue/1/1}"]; 
-
-    answerArrayOO5LEExt =  ["${q://QID2/ChoiceNumericEntryValue/28/1}"]; 
-
-    answerArrayOO5FIInt =  ["${q://QID2/ChoiceNumericEntryValue/29/1}"]; 
-
-    answerArrayOO5FIExt =  ["${q://QID2/ChoiceNumericEntryValue/30/1}"];     
-
-    answerArrayOO5PEInt =  ["${q://QID2/ChoiceNumericEntryValue/31/1}"]; 
-
-    answerArrayOO5PEExt =  ["${q://QID2/ChoiceNumericEntryValue/32/1}"];     
-
-    answerArrayOO5REInt =  ["${q://QID2/ChoiceNumericEntryValue/33/1}"]; 
-
-    answerArrayOO5REExt =  ["${q://QID2/ChoiceNumericEntryValue/34/1}"]; 
-
-    answerArrayOO5INFInt =  ["${q://QID2/ChoiceNumericEntryValue/35/1}"]; 
-
-    answerArrayOO5INFExt =  ["${q://QID2/ChoiceNumericEntryValue/36/1}"];     
-
-    answerArrayOO5HFInt =  ["${q://QID2/ChoiceNumericEntryValue/37/1}"]; 
-
-    answerArrayOO5HFExt =  ["${q://QID2/ChoiceNumericEntryValue/38/1}"];     
-
-     
-
-    answerArrayOO4FISSAPas =  ["${q://QID4/ChoiceNumericEntryValue/1/1}"];     
-
-    answerArrayOO4FISSAAct =  ["${q://QID4/ChoiceNumericEntryValue/4/1}"]; 
-
-    answerArrayOO4FICPas =  ["${q://QID4/ChoiceNumericEntryValue/2/1}"]; 
-
-    answerArrayOO4FICAct =  ["${q://QID4/ChoiceNumericEntryValue/5/1}"];     
-
-    answerArrayOO4FISECPas =  ["${q://QID4/ChoiceNumericEntryValue/3/1}"]; 
-
-    answerArrayOO4FISECAct =  ["${q://QID4/ChoiceNumericEntryValue/16/1}"];     
-
-     
-
-    //CREATE VARIABLES 
-
-    var i = 1; 
-
-    var x = answerArrayOO4[i-1]; 
-
-    var yLEInt = answerArrayOO5LEInt[i-1]; 
-
-    var yLEext = answerArrayOO5LEExt[i-1]; 
-
-    var yFIint = answerArrayOO5FIInt[i-1]; 
-
-    var yFIext = answerArrayOO5FIExt[i-1]; 
-
-    var yPEint = answerArrayOO5PEInt[i-1]; 
-
-    var yPEext = answerArrayOO5PEExt[i-1]; 
-
-    var yREint = answerArrayOO5REInt[i-1]; 
-
-    var yREext = answerArrayOO5REExt[i-1]; 
-
-    var yINFint = answerArrayOO5INFInt[i-1]; 
-
-    var yINFext = answerArrayOO5INFExt[i-1]; 
-
-    var yHFint = answerArrayOO5HFInt[i-1]; 
-
-    var yHFext = answerArrayOO5HFExt[i-1]; 
-
-     
-
-    var yFISSAPas = answerArrayOO4FISSAPas[i-1]; 
-
-    var yFISSAAct = answerArrayOO4FISSAAct[i-1]; 
-
-    var yFICPas = answerArrayOO4FICPas[i-1]; 
-
-    var yFICAct = answerArrayOO4FICAct[i-1]; 
-
-    var yFISECPas = answerArrayOO4FISECPas[i-1];     
-
-    var yFISECAct = answerArrayOO4FISECAct[i-1];     
-
-  
+	
+    var yFISSAPas = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/1/1}"))){
+		yFISSAPas =  parseFloat("${q://QID4/ChoiceNumericEntryValue/1/1}")
+	}
+	
+	var yFISSAAct = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/4/1}"))){
+		yFISSAAct =  parseFloat("${q://QID4/ChoiceNumericEntryValue/4/1}")
+	}
+	
+	var yFICAct = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/2/1}"))){
+		yFICAct =  parseFloat("${q://QID4/ChoiceNumericEntryValue/2/1}")
+	}
+	
+	var yFICPas = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/5/1}"))){
+		yFICPas =  parseFloat("${q://QID4/ChoiceNumericEntryValue/5/1}")
+	}   
+	
+    var yFISECPas = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/3/1}"))){
+		yFISECPas =  parseFloat("${q://QID4/ChoiceNumericEntryValue/3/1}")
+	}
+	
+	var yFISECAct = 0
+    if (!isNaN(parseFloat("${q://QID4/ChoiceNumericEntryValue/16/1}"))){
+		yFISECAct =  parseFloat("${q://QID4/ChoiceNumericEntryValue/16/1}")
+	}
 
     //SUM TOGETHER 
+    var sumLEint = (x/100)*yLEInt; 
+	// test if dividison is correct - if not convert to 0.
+	if (isNaN(sumLEint) || sumLEint === Infinity){
+	  sumLEint = 0
+    }
 
-    var sumLEint = [(x/100)*yLEInt]; 
+    var sumLEext = (x/100)*yLEext; 
+   if (isNaN(sumLEext) || sumLEext === Infinity){
+	  sumLEext = 0
+   }
 
-    var sumLEext = [(x/100)*yLEext]; 
+    var sumFIint = (x/100)*yFIint; 
+	if (isNaN(sumFIint) || sumFIint === Infinity){
+	  sumFIint = 0
+    }
+	
+    var sumFIext = (x/100)*yFIext; 
+    if (isNaN(sumFIext) || sumFIext  === Infinity){
+	  sumFIext = 0
+    }
 
-    var sumFIint = [(x/100)*yFIint]; 
+    var sumPEint = (x/100)*yPEint; 
+	if (isNaN(sumPEint) || sumPEint  === Infinity){
+	  sumPEint = 0
+    }
 
-    var sumFIext = [(x/100)*yFIext]; 
+    var sumPEext = (x/100)*yPEext; 
+    if (isNaN(sumPEext) || sumPEext  === Infinity){
+	  sumPEext = 0
+    }
 
-    var sumPEint = [(x/100)*yPEint]; 
+    var sumREint = (x/100)*yREint; 
+	 if (isNaN(sumREint) || sumREint  === Infinity){
+	  sumREint = 0
+    }
 
-    var sumPEext = [(x/100)*yPEext]; 
+    var sumREext = (x/100)*yREext; 
+    if (isNaN(sumREext) || sumREext  === Infinity){
+	  sumREext = 0
+    }
 
-    var sumREint = [(x/100)*yREint]; 
+    var sumINFint = (x/100)*yINFint; 
+	 if (isNaN(sumINFint) || sumINFint  === Infinity){
+	  sumINFint = 0
+    }
 
-    var sumREext = [(x/100)*yREext]; 
+    var sumINFext = (x/100)*yINFext;
+	if (isNaN(sumINFext) || sumINFext  === Infinity){
+	  sumINFext = 0
+    }
 
-    var sumINFint = [(x/100)*yINFint]; 
+    var sumHFint = (x/100)*yHFint;
+	if (isNaN(sumHFint) || sumHFint  === Infinity){
+	  sumHFint = 0
+    }
 
-    var sumINFext = [(x/100)*yINFext]; 
+    var sumHFext = (x/100)*yHFext; 
+    if (isNaN(sumHFext) || sumHFext  === Infinity){
+	  sumHFext = 0
+    }
 
-    var sumHFint = [(x/100)*yHFint]; 
+    var sumFISSA = yFISSAPas + yFISSAAct; 
+	
+    var sumFIC = yFICPas + yFICAct; 
 
-    var sumHFext = [(x/100)*yHFext]; 
-
-     
-
-    var sumFISSA = [yFISSAPas + yFISSAAct]; 
-
-    var sumFIC = [yFICPas + yFICAct]; 
-
-    var sumFISEC = [yFISECPas + yFISECAct]; 
-
+    var sumFISEC = yFISECPas + yFISECAct; 
   
-
     //LE 
 
     Qualtrics.SurveyEngine.setEmbeddedData("Int_LE_USD", sumLEint); 
@@ -182,38 +211,16 @@ Qualtrics.SurveyEngine.addOnload(function()
 
     Qualtrics.SurveyEngine.setEmbeddedData("Int_FISEC_pc", sumFISEC); 
 
-  
+});
 
-     
+Qualtrics.SurveyEngine.addOnReady(function()
+{
+	/*Place your JavaScript here to run when the page is fully displayed*/
 
-    jQuery("#PreviousButton, #NextButton").css("visibility","hidden"); 
+});
 
-    this.clickNextButton() 
-
-  
-
-}); 
-
-  
-
-Qualtrics.SurveyEngine.addOnReady(function() 
-
-{ 
-
-    /*Place your JavaScript here to run when the page is fully displayed*/ 
-
-  
-
-}); 
-
-  
-
-Qualtrics.SurveyEngine.addOnUnload(function() 
-
-{ 
-
-    /*Place your JavaScript here to run when the page is unloaded*/ 
-
-  
+Qualtrics.SurveyEngine.addOnUnload(function()
+{
+	/*Place your JavaScript here to run when the page is unloaded*/
 
 });
