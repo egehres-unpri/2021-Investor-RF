@@ -1,10 +1,10 @@
 Qualtrics.SurveyEngine.addOnload(function()
 {  
 
-    //CREATE VARIABLES  
+    //Create Variables
 	//assuming this question is always seen...
     var x =  parseFloat("${q://QID571/ChoiceNumericEntryValue/1}")
-	
+    //Hi Luke	
 	//assuming this question is NOT always seen...
 	var yLEInt = 0
     if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/1/1}"))){
