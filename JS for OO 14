@@ -1,10 +1,10 @@
 Qualtrics.SurveyEngine.addOnload(function()
 {  
 
-    //Create Variables
+    //CREATE VARIABLES  
 	//assuming this question is always seen...
     var x =  parseFloat("${q://QID571/ChoiceNumericEntryValue/1}")
-    //Hi Luke	
+	
 	//assuming this question is NOT always seen...
 	var yLEInt = 0
     if (!isNaN(parseFloat("${q://QID2/ChoiceNumericEntryValue/1/1}"))){
@@ -164,6 +164,8 @@ Qualtrics.SurveyEngine.addOnload(function()
     var sumFIC = yFICPas + yFICAct; 
 
     var sumFISEC = yFISECPas + yFISECAct; 
+	
+	var sumReportedAssets = yLEInt + yLEext + yFIint + yFIext + yPEint + yPEext + yREint + yREext + yINFint + yINFext + yHFint + yHFext;
   
     //LE 
 
@@ -201,15 +203,16 @@ Qualtrics.SurveyEngine.addOnload(function()
 
     Qualtrics.SurveyEngine.setEmbeddedData("Ext_HF_USD", sumHFext); 
 
-  
-
-    //FIs 
+      //FIs 
 
     Qualtrics.SurveyEngine.setEmbeddedData("Int_FISSA_pc", sumFISSA); 
 
     Qualtrics.SurveyEngine.setEmbeddedData("Int_FIC_pc", sumFIC); 
 
     Qualtrics.SurveyEngine.setEmbeddedData("Int_FISEC_pc", sumFISEC); 
+      //Reported Assets  
+    
+	Qualtrics.SurveyEngine.setEmbeddedData("Reported_Assets_pc", sumReportedAssets); 
 
 });
 
