@@ -1,0 +1,610 @@
+
+/*CSS for module and Survey Summaries*/
+.SummaryContainerNoShow{
+	display: none !important;
+}
+
+.SummaryContainer table{
+	padding: 1.5%
+}
+
+.SummaryContainer th{
+	background-color: #0087CD;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.SummaryContainer th, td{
+	padding: 0.5%
+}
+
+/*Define widths for the two columns*/
+.SummaryContainer td:nth-child(1) {  
+  width: 500px;
+}
+
+.SummaryContainer td:nth-child(2) {  
+  width: 200px;
+}
+
+.SummaryContainer tr:nth-child(even) {
+	background-color: #f7f7f7;
+}
+
+.AnswerAnswered, .CompleteText {
+	color: 	#32CD32;
+}
+
+.AnswerNotAnswered, .NotCompleteText {
+	color: 	#DC143C;
+}
+
+.IndicatorText, .IndicatorBlock{
+	padding-top: 1vh; 
+	padding-bottom: 1vh; 
+	padding-left: 1vw; 
+}
+
+.SubIndicatorContainer{
+	padding-left: 2vw;
+}
+
+/*CSS for Table of Contents*/
+.tocPad{
+	padding-left: 34px;
+}
+
+span.TocLink{
+	text-decoration: underline;
+}
+
+span.ModuleComplete:after, span.TocLinkComplete:after {
+    font-family: FontAwesome;
+    content: "\f14a";
+    display: inline-block;
+	padding-left: 8px;
+	color: 	#32CD32;
+}
+
+span.ModuleNotComplete:after, span.TocLinkNotComplete:after {
+    font-family: FontAwesome;
+    content: "\f096";
+    display: inline-block;
+	padding-left: 8px;
+	color: 	#DC143C;
+}
+
+
+div#TocSidebarContent {
+	width: 20vw;
+	padding-right: 5vw;
+}
+
+#Toc{
+ 	width: 18vw;
+}
+
+#TOCPage #Toc{
+ 	width: 80%;
+}
+
+/*On apply on Table and Mobile Screens*/
+@media only screen and (max-width: 1000px) {
+	div#TocSidebarContent {
+	width: 60vw;
+	padding-right: 5vw;
+	}
+
+	#Toc{
+		width: 55vw;
+	}
+}
+
+/*On apply on Desktop Screens*/
+@media only screen and (min-width: 1000px) {
+	div#TocSidebarContainer {
+		left: -23vw !important;
+	}	
+}
+
+/*Accordion CSS.*/
+.ModuleText, .IndicatorText{
+	transition: 0.4s;
+	border: 2px solid #0087CD;
+	border-radius: 5px;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.4);
+}
+
+.active, .ModuleText:hover,  .IndicatorText:hover{
+	cursor: pointer;
+	background-color: #0087CD;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px #0087CD;
+}
+
+.ModuleList, .IndicatorTbl{
+	display: none;
+	overflow: hidden;
+}
+
+
+/* QUESTION STYLING
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.H1 {
+              color: #000000;
+              font-family: arial;
+              font-size: 12px;
+			  font-weight: 700;
+             }
+.H2 {
+              color: #000000;
+              font-family: arial;
+              font-size: 16px;
+			  font-weight: 700;
+             }
+.H3 {
+              color: #000000;
+              font-family: arial;
+              font-size: 12px;
+			  text-align: center;
+			  font-weight: 700;
+             }
+.H4 {
+              color: #000000;
+              font-family: arial;
+              font-size: 20px;
+			  text-align: center;
+			  font-weight: 700;
+             }
+.QuestionT {
+              color: #000000;
+              font-family: arial;
+              font-size: 12px;
+			  font-weight: 400;
+			  text-align: left;
+			  } 
+.GuidanceT {
+              color: #000000;
+              font-family: arial;
+              font-size: 12px;
+			  } 
+.Core      {
+             border-collapse: collapse;
+			 border: solid #a6a6a6 1.0pt;
+             }  
+.Core1      {
+              background: #dff5f9;
+              width: 92.05pt;
+              text-align:center;
+             }
+.Core1MR      {
+              background: #ffcc00;
+              width: 92.05pt;
+              text-align:center;
+             }
+.Core2      {
+              border:solid #a6a6a6 1.0pt;
+              background:#dff5f9;
+              width:77.95pt;
+			  padding-left: 15px;
+             }
+.Core3      {
+              border:solid #a6a6a6 1.0pt;
+              background:#dff5f9;
+			  padding-left: 15px;
+             }
+.Core4      {
+              border:solid #a6a6a6 1.0pt;
+              background:#dff5f9;
+              width:233.9pt;
+			  text-align:center;
+              }
+.Core5      {
+              border: solid #a6a6a6 1.0pt;
+              background: #dff5f9;
+              width: 99.25pt;
+			  text-align:center;
+             }
+.Core6      {
+              border:solid #a6a6a6 1.0pt;
+              background:#00b0f0;
+              width:99.3pt;
+			  text-align:center;
+             }
+.Plus      {
+             border-collapse: collapse;
+			 border: solid #a6a6a6 1.0pt;
+             }  
+.Plus1      {
+              background: #f2f2f2;
+              width: 92.05pt;
+              text-align:center;
+             }
+.Plus2      {
+              border:solid #a6a6a6 1.0pt;
+              background:#f2f2f2;
+              width:77.95pt;
+			  padding-left: 15px;
+             }
+.Plus3      {
+              border:solid #a6a6a6 1.0pt;
+              background:#f2f2f2;
+			  padding-left: 15px;
+             }
+.Plus4      {
+              border:solid #a6a6a6 1.0pt;
+              background:#f2f2f2;
+              width:233.9pt;
+			  text-align:center;
+              }
+.Plus5      {
+              border: solid #a6a6a6 1.0pt;
+              background: #f2f2f2;
+              width: 99.25pt;
+			  text-align:center;
+             }
+.Plus6      {
+              border:solid #a6a6a6 1.0pt;
+              background:#a6a6a6;
+              width:99.3pt;
+			  text-align:center;
+             }
+			 
+.Feedback      {
+              border:solid #a6a6a6 1.0pt;
+              background:#a6a6a6;
+			  padding-left: 15px;
+             }
+.Validation      {
+              border:solid #ffcc00 1.0pt;
+              background:#ffcc00;
+			  padding-left: 15px;
+             }
+.Question      {
+              background: #ffffff;
+              padding-left: 20px;
+			  text-align:left;
+             }			 
+.Guidance      {
+              background: #a6a6a6;
+			  text-align:center;
+              padding-left: 15px;
+             }			 
+
+/* RESET RULES 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --lightgray: #efefef;
+  --blue: steelblue;
+  --white: #fff;
+  --black: rgba(0, 0, 0, 0.8);
+  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font: 16px/1.5 sans-serif;
+}
+
+.btn-group {
+  text-align: center;
+}
+
+.open-modal {
+  font-weight: bold;
+  /*background: var(--blue)
+  color: var(--white);
+  padding: 0.75rem 1.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;;*/
+}
+
+
+/* MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.modal {
+  position: fixed;
+  Overflow: hidden;
+  z-index: 9999; /*causes the contents behind background to be invisible/unclickable*/
+  padding-top: 100px; /* Location of the box */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--black);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: var(--white);
+  overflow: auto;
+  cursor: default;
+}
+
+.modal-dialog > * {
+  padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+  background: var(--lightgray);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header .close-modal {
+  font-size: 1.5rem;
+}
+
+.modal p + p {
+  margin-top: 1rem;
+}
+
+
+	  
+#modal1:target {
+  display: block;
+  }
+#modal2:target {
+  display: block;
+  }
+
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[data-animation] .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s var(--bounceEasing);
+}
+
+[data-animation].is-visible .modal-dialog {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+[data-animation="slideInOutDown"] .modal-dialog {
+  transform: translateY(100%);
+}
+
+[data-animation="slideInOutTop"] .modal-dialog {
+  transform: translateY(-100%);
+}
+
+[data-animation="slideInOutLeft"] .modal-dialog {
+  transform: translateX(-100%);
+}
+
+[data-animation="slideInOutRight"] .modal-dialog {
+  transform: translateX(100%);
+}
+
+[data-animation="zoomInOut"] .modal-dialog {
+  transform: scale(0.2);
+}
+
+[data-animation="rotateInOutDown"] .modal-dialog {
+  transform-origin: top left;
+  transform: rotate(-1turn);
+}
+
+[data-animation="mixInAnimations"].is-visible .modal-dialog {
+  animation: mixInAnimations 2s 0.2s linear forwards;
+}
+
+[data-animation="slideInOutDown"].is-visible .modal-dialog,
+[data-animation="slideInOutTop"].is-visible .modal-dialog,
+[data-animation="slideInOutLeft"].is-visible .modal-dialog,
+[data-animation="slideInOutRight"].is-visible .modal-dialog,
+[data-animation="zoomInOut"].is-visible .modal-dialog,
+[data-animation="rotateInOutDown"].is-visible .modal-dialog {
+  transform: none;
+}
+
+@keyframes mixInAnimations {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  30% {
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  60% {
+    transform: rotate(10deg);
+  }
+
+  70% {
+    transform: rotate(-10deg);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  90% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.page-footer span {
+  color: #e31b23;
+}
+	  
+	  
+	  
+/*Preface Styling
+–––––––––––––––––––––––––––––––––––––––––––––––––– */	  
+	  
+.box {
+  width: 100%;
+  height: 210px;
+}
+
+.blue {
+  background: #0054a6;
+}
+
+.PrefaceTitle {
+  margin-top: 0.5cm;
+  margin-bottom: 1cm;
+  margin-left: 0.5cm;
+  color: #00aeef;
+}
+
+.PrefaceSubtitle {
+  margin-left: 0.5cm;
+  color: White;
+}
+
+.ExtraTitleBlue{
+	.PrefaceTitle {
+  margin-top: 0.5cm;
+  margin-bottom: 1cm;
+  margin-left: 0cm;
+  color: #00aeef;
+}
+
+.split {
+  height: 100%;
+  width: 45%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  width: 50%;
+  background-color: white;
+}
+
+.right {
+  right: 0;
+  width: 50%;
+  background-color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  vertical-align: top;
+}
+
+.vl {
+  border-left: 0.5px solid grey;
+  height: 400px;
+}
+
+	  /*TOOLTIPS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	  
+/* Tooltip container */
+.tooltip {
+position: bottom;
+display: inline-block;
+cursor: help;
+border-bottom: 1px dotted black;
+background-color: #0087cd
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 600px;
+background-color: darkgrey;
+color:white;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+font-size: 16px;
+position: absolute;
+display: inline-block;
+
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+article {margin-bottom: 1em;}  
