@@ -179,41 +179,41 @@ div#TocSidebarContent {
              }  
 .Core1      {
               background: #dff5f9;
-              width: 92.05pt;
+              width: 92.05pt !important;
               text-align:center;
              }
 .Core1MR      {
               background: #ffcc00;
-              width: 92.05pt;
+              width: 92.05pt !important;
               text-align:center;
              }
 .Core2      {
               border:solid #a6a6a6 1.0pt;
               background:#dff5f9;
-              width:77.95pt;
+              width:77.95pt !important;
 			  padding-left: 15px;
              }
 .Core3      {
               border:solid #a6a6a6 1.0pt;
               background:#dff5f9;
-			  padding-left: 15px;
+			  padding-left: 15px !important;
              }
 .Core4      {
               border:solid #a6a6a6 1.0pt;
               background:#dff5f9;
-              width:233.9pt;
+              width:233.9pt !important;
 			  text-align:center;
               }
 .Core5      {
               border: solid #a6a6a6 1.0pt;
               background: #dff5f9;
-              width: 99.25pt;
+              width: 99.25pt !important;
 			  text-align:center;
              }
 .Core6      {
               border:solid #a6a6a6 1.0pt;
               background:#00b0f0;
-              width:99.3pt;
+              width:99.3pt !important;
 			  text-align:center;
              }
 .Plus      {
@@ -222,36 +222,36 @@ div#TocSidebarContent {
              }  
 .Plus1      {
               background: #f2f2f2;
-              width: 92.05pt;
+              width: 92.05pt !important;
               text-align:center;
              }
 .Plus2      {
               border:solid #a6a6a6 1.0pt;
               background:#f2f2f2;
-              width:77.95pt;
+              width:77.95pt !important;
 			  padding-left: 15px;
              }
 .Plus3      {
               border:solid #a6a6a6 1.0pt;
               background:#f2f2f2;
-			  padding-left: 15px;
+			  padding-left: 15px !important;
              }
 .Plus4      {
               border:solid #a6a6a6 1.0pt;
               background:#f2f2f2;
-              width:233.9pt;
+              width:233.9pt !important;
 			  text-align:center;
               }
 .Plus5      {
               border: solid #a6a6a6 1.0pt;
               background: #f2f2f2;
-              width: 99.25pt;
+              width: 99.25pt !important;
 			  text-align:center;
              }
 .Plus6      {
               border:solid #a6a6a6 1.0pt;
               background:#a6a6a6;
-              width:99.3pt;
+              width:99.3pt !important;
 			  text-align:center;
              }
 			 
@@ -265,16 +265,21 @@ div#TocSidebarContent {
               background:#ffcc00;
 			  padding-left: 15px;
              }
-.Question      {
-              background: #ffffff;
-              padding-left: 20px;
-			  text-align:left;
-             }			 
+.HLastRow{
+              height:20px;
+	          text-align:left !important;
+              padding-top:1px;
+              padding-right:1px;
+              padding-left:1px;
+              vertical-align:center !important;
+              }		 
 .Guidance      {
-              background: #a6a6a6;
-			  text-align:center;
+              background: #eeeeee;
+	          border:solid #a6a6a6 1.0pt;
+			  text-align:left;
               padding-left: 15px;
-             }			 
+             }			
+	
 
 /* RESET RULES 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
